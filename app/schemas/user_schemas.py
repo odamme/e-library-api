@@ -15,21 +15,21 @@ class User(UserBase, UserStatus):
 
 
 class CreateUser(UserBase):
-    first_name:str = "Alee"
-    last_name:str = "Al-asawi"
-    email: EmailStr = "alee@alee.com"
-    password:str = "mypass"
-    confirm_password:str = "mypass"
+    first_name:str = "Damilola"
+    last_name:str = "Oladeji"
+    email: EmailStr = "oladejidam@gmail.com"
+    password:str = "password"
+    confirm_password:str = "password"
     
 class UserLogin(BaseModel):
-    username:str = "alee@alee.com"
-    password:str = "mypass"
+    username:str = "oladejidam@gmail.com"
+    password:str = "password"
         
 class UpdateUser(BaseModel):
-    first_name:Optional[str] = "Al-ameen"
-    last_name:Optional[str] = "Al-marabi"
+    first_name:Optional[str] = "Damilola"
+    last_name:Optional[str] = "Oladeji"
     
 class ChangePassword(BaseModel):
-    old_password:str = "mypass"
-    new_password:str = "newpass"
-    confirm_password:str = "newpass" 
+    old_password:str = "password"
+    new_password:str = "password_new"
+    confirm_password:str = "password_new" 
