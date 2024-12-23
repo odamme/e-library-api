@@ -5,7 +5,7 @@ API Endpoints
 ```plaintext
 POST   /v1/users/          Create new user
 GET    /v1/users/          Retrieve all users
-GET    /v1/users/{id}      Retrieve specific user
+GET    /v1/users/{id}      Retrieve a specific user
 PUT    /v1/users/{id}      Update user details
 PATCH  /v1/users/{id}      Deactivate user
 DELETE /v1/users/{id}      Delete user
@@ -14,7 +14,7 @@ DELETE /v1/users/{id}      Delete user
 
 ```plaintext
 POST   /v1/books/          Add new book
-GET    /v1/books/          List books (with filtering)
+GET    /v1/books/          List books
 GET    /v1/books/{id}      Retrieve specific book
 PUT    /v1/books/{id}      Update book details
 PATCH  /v1/books/{id}      Mark book unavailable
@@ -23,10 +23,10 @@ DELETE /v1/books/{id}      Remove book
 **- Borrow Endpoints**
 
 ```plaintext
-POST   /v1/borrows/        Record book borrowing
+POST   /v1/borrows/        Record book borrow
 GET    /v1/borrows/        List all borrowing records
 GET    /v1/borrows/{id}    Get user's borrowing history
-PATCH  /v1/borrows/{id}    Process book return
+PATCH  /v1/borrows/{id}    Return book
 ```
 
 **Application setup**
