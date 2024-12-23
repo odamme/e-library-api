@@ -1,16 +1,16 @@
 from fastapi import APIRouter, Body, status
-from ..crud.books import book_crud
-from ..schemas.book_schemas import CreateBook, Book, PatchBook
+from crud.books import book_crud
+from schemas.book_schemas import CreateBook, Book, PatchBook
 from typing import Annotated
-from ..services.book_services import book_service
+from services.book_services import book_service
 
 
-router = APIRouter(prefix="/books", tags=["Books"])
+router = APIRouter()
 
 @router.post("/", status_code=status.HTTP_201_CREATED)
 async def add_book(payload:CreateBook):
     new_book = book_crud.create_book(payload)
-    return {"data":new_book, "message":"Book added successfully"}
+    return {"data":new_book, "message":"Book added!"}
 
 @router.get("/", status_code=status.HTTP_200_OK)
 async def get_books():
@@ -32,7 +32,7 @@ async def update_book(book_id:int, payload:PatchBook):
 async def mark_book_as_unavailable(book_id:int):
     book_service.mark_book_as_unavailable(book_id)
     
-    return {"message":"Book successfully marked unvailable"}
+    return {"message":"Book marked unvailable"}
 
 @router.get("/{book_id}/status", status_code=status.HTTP_200_OK)
 async def validate_book_availability(book_id:int):

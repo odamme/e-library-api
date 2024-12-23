@@ -1,5 +1,12 @@
-from ..schemas.user_schemas import UserBase, User, UpdateUser, ChangePassword, UserLogin, UserStatus, CreateUser, UpdateUser
-from ..database.in_memory import users
+from schemas.user_schemas import UserBase
+from schemas.user_schemas import User
+from schemas.user_schemas import UpdateUser
+from schemas.user_schemas import ChangePassword
+from schemas.user_schemas import UserLogin
+from schemas.user_schemas import UserStatus
+from schemas.user_schemas import CreateUser
+from schemas.user_schemas import UpdateUser
+from database.in_memory import users
 from fastapi import HTTPException, status
 
 class UserCrud():

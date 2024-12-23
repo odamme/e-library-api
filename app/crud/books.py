@@ -1,5 +1,5 @@
-from ..schemas.book_schemas import CreateBook, Book, PatchBook
-from ..database.in_memory import books
+from schemas.book_schemas import CreateBook, Book, PatchBook
+from database.in_memory import books
 from fastapi import HTTPException, status
 
 class BookCrud():

@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Body, status, HTTPException
-from ..crud.book_borrows import borrow_crud
-from ..schemas.borrow_record_schema import Borrow
+from crud.book_borrows import borrow_crud
+from schemas.borrow_record_schema import Borrow
 from typing import Annotated
-from ..services.borrow_services import borrow_service
-from ..database.in_memory import borrow_records
+from services.borrow_services import borrow_service
+from database.in_memory import borrow_records
 
 
-router = APIRouter(tags=["Borrow"])
+router = APIRouter()
 
 @router.post("/borrow/{user_id}/{book_id}", status_code=status.HTTP_201_CREATED)
 def borrow_book(user_id:int, book_id:int):

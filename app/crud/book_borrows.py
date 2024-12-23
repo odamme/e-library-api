@@ -1,7 +1,7 @@
-from ..schemas.borrow_record_schema import Borrow
-from ..database.in_memory import borrow_records
+from schemas.borrow_record_schema import Borrow
+from database.in_memory import borrow_records
 from datetime import datetime
-from .users import user_crud
+from users import user_crud
 
 class BorrowCrud():
     

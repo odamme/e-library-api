@@ -7,14 +7,14 @@ class BookBase(BaseModel):
 
 class BookStatus(BaseModel):
     is_available:bool = True
-    
-class Book(BookBase, BookStatus):
-    id: int = 100001
 
 class CreateBook(BookBase):
-    title: str = "The Boy from the Book"
-    author:str = "Alee Al-marabi"
+    title: str = "The genesis of the Earth"
+    author:str = "John Doe"
+
+class Book(BookBase, BookStatus):
+    id: int = 100001
     
 class PatchBook(BaseModel):
-    title: Optional[str] = "The Boy from the Book"
-    author:Optional[str] = "Alee Al-asawi"
+    title: Optional[str] = "Geospatial Analysis"
+    author:Optional[str] = "Damilola Oladeji"

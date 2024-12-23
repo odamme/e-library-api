@@ -1,13 +1,14 @@
 from fastapi import FastAPI
-from .routes import user_routes
-from .routes import book_routes
-from .routes import borrow_routes
+
+import routes.user_routes
+import routes.book_routes
+import routes.borrow_routes
 
 app =FastAPI()
 
-app.include_router(user_routes.router)
-app.include_router(book_routes.router)
-app.include_router(borrow_routes.router)
+app.include_router(routes.user_routes.router, prefix="/v1/users",tags=["Users"],)
+app.include_router(routes.book_routes.router, prefix="/v1/books", tags=["Books"])
+app.include_router(routes.borrow_routes.router, prefix="/v1/borrows", tags=["Borrow"])
 
 @app.get("/")
 def home():
